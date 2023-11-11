@@ -1,0 +1,11 @@
+cmake -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+
+# compile the static library
+make -C rocksdb static_lib
+
+# (optional) strip away debug symbols because it makes a file >800M
+strip --strip-debug rocksdb/librocksdb.a
+
+# outputs the example binary into rocks/build/bin/rocks
+make -C build
+

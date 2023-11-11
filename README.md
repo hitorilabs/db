@@ -1,2 +1,0 @@
-# db
-toy database projects

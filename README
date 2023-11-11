@@ -1,0 +1,9 @@
+toy database projects
+
+if you are cloning this project, make sure to run the command with `--recurse-submodules`
+
+# if you use the GH CLI
+gh repo clone hitorilabs/db -- --recurse-submodules
+
+git clone https://github.com/hitorilabs/db.git --recurse-submodules
+

@@ -1,0 +1,6 @@
+[submodule "rocks/--force"]
+	path = rocks/--force
+	url = https://github.com/facebook/rocksdb.git
+[submodule "rocks/rocksdb"]
+	path = rocks/rocksdb
+	url = https://github.com/facebook/rocksdb.git
