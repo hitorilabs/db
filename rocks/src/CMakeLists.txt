@@ -9,15 +9,13 @@ set_target_properties(rocks PROPERTIES
 find_package(ZLIB REQUIRED)
 find_package(BZip2 REQUIRED)
 
-find_library(ZSTD_LIBRARY NAMES zstd PATHS /lib/x86_64-linux-gnu)
-find_library(LZ4_LIBRARY NAMES lz4 PATHS /lib/x86_64-linux-gnu)
-find_library(SNAPPY_LIBRARY NAMES snappy PATHS /lib/x86_64-linux-gnu)
+find_library(ZSTD_LIBRARIES NAMES zstd PATHS /lib/x86_64-linux-gnu)
+find_library(LZ4_LIBRARIES NAMES lz4 PATHS /lib/x86_64-linux-gnu)
+find_library(SNAPPY_LIBRARIES NAMES snappy PATHS /lib/x86_64-linux-gnu)
 
 # Include directories for header files
 target_include_directories(rocks PRIVATE
     ${PROJECT_SOURCE_DIR}/rocksdb/include
-    ${ZLIB_INCLUDE_DIRS}
-    ${BZIP2_INCLUDE_DIR}
 )
 
 # Link the precompiled static library
@@ -29,8 +27,8 @@ target_link_libraries(rocks
     rocksdb
     ${ZLIB_LIBRARIES}
     ${BZIP2_LIBRARIES}
-    ${ZSTD_LIBRARY}
-    ${LZ4_LIBRARY}
-    ${SNAPPY_LIBRARY}
+    ${ZSTD_LIBRARIES}
+    ${LZ4_LIBRARIES}
+    ${SNAPPY_LIBRARIES}
 )
 
